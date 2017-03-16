@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from sklearn.tree import DecisionTreeRegressor
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.externals import joblib
 from sklearn.preprocessing import OneHotEncoder
 import re
@@ -36,7 +36,7 @@ class Generator:
         self.model = joblib.load("model.x")
 
     def build_model(self, shape):
-        self.model = DecisionTreeRegressor()
+        self.model = DecisionTreeClassifier()
 
     def train(self, datafile, read_batch):
         with open(datafile, "r") as fl:
